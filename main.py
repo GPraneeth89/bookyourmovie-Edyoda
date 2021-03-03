@@ -2,7 +2,8 @@ from bym import *
 if __name__ == "__main__":
    
        
-    r_o,c_o=map(int,input("Enter row and col with space").split())
+    r_o=int(input("Enter no of rows"))
+    c_o=int(input("Enter no of column"))
     a_obj=BYM(r_o,c_o)
     while True:
 
