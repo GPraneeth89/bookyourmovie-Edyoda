@@ -19,9 +19,10 @@ if __name__ == "__main__":
         elif b_in=="2":
             b_r,b_c=map(int,input("ENter booking seat").split())
             li={}
-            a_list=['Name','Gender','Age','Phone']
+            a_list=['Name','Gender','Age','Phone',"Price"]
             for i in range(4):
                 li[a_list[i]]=input(a_list[i])
+            li[a_list[-1]]=0
             try:
                 a_obj.bookSeat(b_r,b_c,li)
             except IndexError as e:
@@ -31,7 +32,7 @@ if __name__ == "__main__":
             a_obj.stats()
 
         elif b_in=='4':
-            a_obj.showbok(input("Enter row and col without space"))
+            a_obj.showbok(input("Enter row and col with space"))
 
         elif b_in=='0':
             break

@@ -29,10 +29,13 @@ class BYM:
                     
                 else:
                     li["Price"]=8
-            self.a[str(ro)+str(co)]=li
+            else:
+                li["Price"]=10
+            
         else:
             print("Seat is not available")
-   
+        self.a[str(ro)+" "+str(co)]=li
+    
     def stats(self):
         total_income=0
         curr_income = 0
