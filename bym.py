@@ -18,11 +18,18 @@ class BYM:
             print(" ")
 
     def bookSeat(self,ro,co,li):
-        self.a[str(ro)+str(co)]=li
+        
         if self.hall_mat[ro-1][co-1]!="B":
             self.hall_mat[ro-1][co-1]="B"
             self.show()
             self.no_of_tickets+=1
+            if self.row*self.col>60:
+                if ro<=self.row//2:
+                    li["Price"]=10
+                    
+                else:
+                    li["Price"]=8
+            self.a[str(ro)+str(co)]=li
         else:
             print("Seat is not available")
    
@@ -58,8 +65,10 @@ class BYM:
             
 
     def showbok(self,ro):
-        print(self.a[ro])
-
+        try:
+            print(self.a[ro])
+        except:
+            print("Seat is not booked")
 
 
 
